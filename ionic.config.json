@@ -1,0 +1,7 @@
+{
+  "name": "lan-chat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
