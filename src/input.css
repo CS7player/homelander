@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/*Welcome page*/
+
+.welcome-item {
+  --background: transparent;
+  --inner-background: transparent;
+  --border-width: 0;
+  --highlight-height: 0;
+}
+
+ion-input.welcome-input {
+  --background: transparent;
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.6);
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
+
+ion-input.welcome-input::part(native) {
+  color: white;
+}
+
+ion-content.custom-bg {
+  --background: #000000;
+}
+
+ion-toolbar.custom-toolbar {
+  --background: #09090b;
+  padding: 8px 12px;
+}
+
+ion-content.chat-bg {
+  --background: #000;
+  --padding-bottom: 90px;
+  height: 90%;
+}
+
+ion-header.custom-header {
+  --background: #000;
+}
+
+ion-toolbar.custom-toolbar {
+  --background: #09090b; /* zinc-950 */
+  --color: white;
+  padding: 10px 12px;
+}
+
+/* ===== HEADER ===== */
+.custom-header {
+  --background: #18181b;
+}
+
+.custom-toolbar {
+  --background: #18181b;
+  --color: white;
+}
+
+.chat-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.message-row {
+  display: flex;
+}
+
+.message-row.left {
+  justify-content: flex-start;
+}
+
+.message-row.right {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: 75%;
+  padding: 10px 12px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Other user */
+.message-bubble.other {
+  background: #ffffff;
+  color: #000;
+  border-top-left-radius: 6px;
+}
+
+/* You */
+.message-bubble.me {
+  background: #3b82f6;
+  color: #fff;
+  border-top-right-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.messages-container {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 80%;
+}
+
+/* ===== FOOTER INPUT ===== */
+.chat-footer {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.chat-toolbar {
+  --background: transparent;
+  padding: 8px 10px 14px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+}
+
+ion-input.chat-input {
+  --color: #ffffff;
+  --placeholder-color: #a1a1aa;
+  --padding-start: 10px;
+  font-size: 14px;
+  --border-radius: 20px;
+  border-radius: 20px;
+  background: #18181b;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  /* IMPORTANT: remove any Ionic native styling */
+  --border-width: 0;
+  --border-color: transparent;
+  --highlight-color-focused: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
+}
+
+/* Send button */
+.send-btn {
+  --background: #22c55e;
+  --color: #000;
+  width: 38px;
+  height: 38px;
+  --box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+}
+
+.send-btn:active {
+  transform: scale(0.95);
+}
+
+ion-content::part(scroll) {
+  scroll-behavior: smooth;
+}
+
+.centered-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}

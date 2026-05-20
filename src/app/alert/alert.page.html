@@ -1,0 +1,18 @@
+@if(show){
+<div class="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+ <div class="w-72 min-h-52 rounded-2xl shadow-2xl p-6 flex flex-col justify-between" [ngClass]="alertClass">
+  <!-- TITLE -->
+  <div class="text-center text-2xl font-bold mb-4">
+   {{title}}
+  </div>
+  <!-- MESSAGE -->
+  <div class="text-center text-lg flex-1 flex items-center justify-center">
+   {{ alertMessage || 'This is an alert message!' }}
+  </div>
+  <!-- BUTTON -->
+  <ion-button expand="block" color="light" (click)="closeAlert()" class="mt-6 font-semibold">
+   OK
+  </ion-button>
+ </div>
+</div>
+}

@@ -1,0 +1,38 @@
+<ion-header [translucent]="true" class="custom-header">
+ <ion-toolbar class="custom-toolbar">
+  <ion-buttons slot="start" (click)="toUserList()">
+   <ion-button fill="clear">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+   </ion-button>
+  </ion-buttons>
+  <ion-title class="chat-title">
+   <span class="online-dot"></span>
+   {{ selectedUser.username }}
+  </ion-title>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="chat-bg" #content>
+ <div class="messages-container">
+  @for (m of lan.messages; track $index) {
+  <div class="message-row" [ngClass]="m.from === 'you' ? 'right' : 'left'">
+   <div class="message-bubble" [ngClass]="m.from === 'you' ? 'me' : 'other'">
+    {{ m.msg }}
+   </div>
+  </div>
+  }
+ </div>
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="chat-footer" translucent="true">
+ <ion-toolbar class="chat-toolbar">
+  <div class="input-wrapper">
+   <ion-input [(ngModel)]="messageText" name="messageText" placeholder="Type a message..."
+    class="chat-input"></ion-input>
+   <ion-button class="send-btn" shape="round" (click)="sendMessage()">
+    <ion-icon slot="icon-only" name="send"></ion-icon>
+   </ion-button>
+  </div>
+ </ion-toolbar>
+</ion-footer>
